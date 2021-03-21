@@ -26,10 +26,14 @@
      - database.sqlite (It gets create when one run a migration NOTE: this is ignored into this repository)
      - index.js (Here we are starting all the express loginc)
 
+## Dependencies
+  - sqlite3
+  - node ^10
+  - npm
 
 >> In order to use please, follow the next steps
 
-## building
+## Building
   - cd api
   - npm i
   - cd src
@@ -38,7 +42,7 @@
   - cd ..
   - npm run dev
 
-## using
+## Using
   - Open the index html file into an explorer, fill the form
   - Press up button in order to go to process
   - Now you can watch the previous user created
