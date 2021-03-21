@@ -57,7 +57,7 @@
 
     <div x-data="handleUsers()" x-init="init()" class="container mx-auto">
       <div class="mt-10 rounded shadow py-5 px-7">
-        <h3>Registros</h3>
+        <h3>List of users</h3>
         <div class="flex items-center mt-4">
           <button
             class="bg-gray-700 hover:bg-gray-800 disabled:opacity-50 text-white w-full p-2 mb-4"
@@ -71,10 +71,10 @@
         <table class="mt-5 table-fixed">
           <thead>
             <tr>
-              <th class="w-1/2 px-4 py-2">Nombre</th>
-              <th class="w-1/2 px-4 py-2">Apellidos</th>
-              <th class="w-1/2 px-4 py-2">Procesado</th>
-              <th class="w-1/2 px-4 py-2">Procesar</th>
+              <th class="w-1/2 px-4 py-2">Name</th>
+              <th class="w-1/2 px-4 py-2">Lastname</th>
+              <th class="w-1/2 px-4 py-2">Processed</th>
+              <th class="w-1/2 px-4 py-2">Process it</th>
             </tr>
           </thead>
           <tbody>
@@ -107,7 +107,7 @@
           users: [],
           message: '',
           loading: false,
-          buttonLabel: 'Procesar',
+          buttonLabel: 'Process it',
           toprocess: [],
 
           processUsers() {
@@ -121,14 +121,14 @@
               body: JSON.stringify({ ids: this.toprocess }),
             })
               .then(() => {
-                this.message = 'Usuarios procesados'
+                this.message = 'Users processed successfully'
               })
               .catch(() => {
-                this.message = 'Ha pasado algo, intenta mas tarde'
+                this.message = 'Something wrong has happened, try again later'
               })
               .finally(() => {
                 this.loading = false;
-                this.buttonLabel = 'Procesar'
+                this.buttonLabel = 'Process it'
                 this.init();
               });
           },
@@ -142,7 +142,7 @@
                 this.users = response;
               })
               .catch(() => {
-                this.message = 'Ha pasado algo, intenta mas tarde'
+                this.message = 'Something wrong has happened, try again later'
               });
           },
           addToProcess(id) {

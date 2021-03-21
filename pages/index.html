@@ -61,7 +61,7 @@
         <form class="flex space-x-4 mt-6" x-data="contactForm()" @submit.prevent="submitData">
           <div class="pr-2 pl-2">
             <label class='block font-medium text-sm text-gray-700'>
-              Nombre
+              Name
             </label>
             <input
               class='border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm'
@@ -72,7 +72,7 @@
 
           <div class="pr-2 pl-2">
             <label class='block font-medium text-sm text-gray-700'>
-              Apellidos
+              Lastname
             </label>
             <input
               class='border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm'
@@ -100,7 +100,7 @@
           },
           message: '',
           loading: false,
-          buttonLabel: 'Guardar',
+          buttonLabel: 'Save',
 
           submitData() {
             this.buttonLabel = 'Submitting...'
@@ -114,21 +114,21 @@
                 body: JSON.stringify(this.formData)
               })
                 .then(() => {
-                  this.message = 'Datos guardados'
+                  this.message = 'Data saved successfully'
                 })
                 .catch(() => {
-                  this.message = 'Ha pasado algo, intenta mas tarde'
+                  this.message = 'Something wrong has happened, try again later'
                 })
                 .finally(() => {
                   this.loading = false;
-                  this.buttonLabel = 'Guardar'
+                  this.buttonLabel = 'Save'
                   this.formData.name = '';
                   this.formData.lastname = '';
                 })
             } else {
-              this.message = 'Todos los campos son requeridos';
+              this.message = 'All fields are required';
               this.loading = false;
-              this.buttonLabel = 'Guardar'
+              this.buttonLabel = 'Save'
             }
           }
         }
