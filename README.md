@@ -35,6 +35,11 @@
 
 >> In order to use please, follow the next steps
 
+# IMPORTANT NOTE
+>> Because sqlite has to have an absolute path, one has to edit the default path in one file.
+>> Edit the file api/src/config/config.json and
+>> edit the storage path to the *curent_project_path/api/src/database.sqlite*
+
   - cd api
   - npm i
   - cd src
