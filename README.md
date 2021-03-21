@@ -31,9 +31,10 @@
   - node ^10
   - npm
 
+## Building
+
 >> In order to use please, follow the next steps
 
-## Building
   - cd api
   - npm i
   - cd src
